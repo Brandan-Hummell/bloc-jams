@@ -3,18 +3,14 @@
 
        var animatePoints = function(points) {
 
-           for (var i = 0; i < points.length; i++) {
-               var revealPoint = function() {
-                   points[i].style.opacity = 1;
-                   points[i].style.transform = "scaleX(1) translateY(0)";
-                   points[i].style.msTransform = "scaleX(1) translateY(0)";
-                   points[i].style.WebkitTransform = "scaleX(1) translateY(0)";
-               };
-               revealPoint();
-           }
-
-
+           forEach(points, function(a) {
+               points[a].style.opacity = 1;
+               points[a].style.transform = "scaleX(1) translateY(0)";
+               points[a].style.msTransform = "scaleX(1) translateY(0)";
+               points[a].style.WebkitTransform = "scaleX(1) translateY(0)";
+           });
        };
+
        window.onload = function() {
            if (window.innerHeight > 950) {
                animatePoints(pointsArray);
