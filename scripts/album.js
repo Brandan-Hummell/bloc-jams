@@ -30,6 +30,22 @@
      ]
  };
 
+ var albumBobs = {
+     title: "Black on Both Sides",
+     artist: "Mos Def",
+     label: "Rawkus Records",
+     year: 1999,
+     albumArtUrl: "C:\Users\Vibe\Documents\Bloc\bloc-jams\assets\images\album_covers/Bobs.jpg",
+     songs: [
+         { title: 'Fear Not of Man', duration: '4:30' },
+         { title: 'Speed Law', duration: '4:16' },
+         { title: 'New World Water', duration: '3:12' },
+         { title: 'Love', duration: '4:23' },
+         { title: 'Mathematics', duration: '4:06' }
+     ]
+ };
+
+
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
          '<tr class="album-view-song-item">' +
@@ -67,3 +83,13 @@
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
  };
+
+ window.addEventListener('click', function(event) {
+     if (document.getElementsByClassName('album-view-title')[0].firstChild.nodeValue == "The Colors") {
+         setCurrentAlbum(albumMarconi);
+     } else if (document.getElementsByClassName('album-view-title')[0].firstChild.nodeValue == "The Telephone") {
+         setCurrentAlbum(albumBobs);
+     } else if (document.getElementsByClassName('album-view-title')[0].firstChild.nodeValue == "Black on Both Sides") {
+         setCurrentAlbum(albumPicasso);
+     }
+ });
