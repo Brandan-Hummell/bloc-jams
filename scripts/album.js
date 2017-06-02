@@ -35,7 +35,7 @@
      artist: "Mos Def",
      label: "Rawkus Records",
      year: 1999,
-     albumArtUrl: "C:\Users\Vibe\Documents\Bloc\bloc-jams\assets\images\album_covers/Bobs.jpg",
+     albumArtUrl: "assets/images/album_covers/Bobs.jpg",
      songs: [
          { title: 'Fear Not of Man', duration: '4:30' },
          { title: 'Speed Law', duration: '4:16' },
@@ -84,12 +84,14 @@
      setCurrentAlbum(albumPicasso);
  };
 
+ var albumArray = [albumMarconi, albumPicasso, albumBobs];
+ var albumIndex = 1;
  window.addEventListener('click', function(event) {
-     if (document.getElementsByClassName('album-view-title')[0].firstChild.nodeValue == "The Colors") {
-         setCurrentAlbum(albumMarconi);
-     } else if (document.getElementsByClassName('album-view-title')[0].firstChild.nodeValue == "The Telephone") {
-         setCurrentAlbum(albumBobs);
-     } else if (document.getElementsByClassName('album-view-title')[0].firstChild.nodeValue == "Black on Both Sides") {
-         setCurrentAlbum(albumPicasso);
+     albumIndex++;
+     if (albumIndex == (albumArray.length)) {
+         albumIndex = 0;
      }
+     setCurrentAlbum(albumArray[albumIndex]);
+
+
  });
