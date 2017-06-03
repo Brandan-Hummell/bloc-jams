@@ -81,6 +81,10 @@ body.album {
     line-height: 28px;
 }
 
+.ion-play:before {
+    content: "\f215";
+}
+
 @media (max-width: 640px) and (min-width: 320px) {
     .album-view-details {
         text-align: center;
