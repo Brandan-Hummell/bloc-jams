@@ -80,37 +80,37 @@
      }
  };
 
- var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
-
- var songRows = document.getElementsByClassName('album-view-song-item');
-
- var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
-
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
- };
 
- songListContainer.addEventListener('mouseover', function(event) {
-     if (event.target.parentElement.className === 'album-view-song-item') {
-         event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
-     }
- });
+     var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+
+     var playButtonTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+
+     var songRows = document.getElementsByClassName('album-view-song-item');
 
 
- for (var i = 0; i < songRows.length; i++) {
-     songRows[i].addEventListener('mouseleave', function(event) {
-         this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
+     songListContainer.addEventListener('mouseover', function(event) {
+         if (event.target.parentElement.className === 'album-view-song-item') {
+             event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtonTemplate;
+         }
      });
- }
 
- var albumArray = [albumMarconi, albumPicasso, albumBobs];
- var albumIndex = 1;
- document.getElementsByClassName('album-cover-art')[0].addEventListener('click', function(event) {
-     albumIndex++;
-     if (albumIndex == (albumArray.length)) {
-         albumIndex = 0;
+     for (var i = 0; i < songRows.length; i++) {
+         songRows[i].addEventListener('mouseleave', function(event) {
+             this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
+         });
      }
-     setCurrentAlbum(albumArray[albumIndex]);
+
+     var albumArray = [albumMarconi, albumPicasso, albumBobs];
+     var albumIndex = 1;
+     document.getElementsByClassName('album-cover-art')[0].addEventListener('click', function(event) {
+         albumIndex++;
+         if (albumIndex == (albumArray.length)) {
+             albumIndex = 0;
+         }
+         setCurrentAlbum(albumArray[albumIndex]);
 
 
- });
+     });
+ };
