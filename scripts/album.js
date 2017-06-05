@@ -80,6 +80,23 @@
      }
  };
 
+ var findParentByClassName = function(element, classQuery) {
+     var currentElement = element;
+     var endFlag = false;
+     while (endFlag == false) {
+         if (currentElement.parentElement == null) {
+             endFlag = true;
+             console.log("There is no parent element for" + element);
+             return null;
+         } else if (currentElement.getAttribute('class') == classQuery) {
+             endFlag = true;
+             return currentElement;
+         } else {
+             currentElement = currentElement.parentElement;
+         }
+     }
+ };
+
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
 
