@@ -83,10 +83,14 @@
  var findParentByClassName = function(element, classQuery) {
      var currentElement = element;
      var endFlag = false;
+     if (currentElement.parentElement == null) {
+         console.log("There is no parent element for" + element);
+         return null;
+     }
      while (endFlag == false) {
          if (currentElement.parentElement == null) {
              endFlag = true;
-             console.log("There is no parent element for" + element);
+             console.log("No parent found with that class name");
              return null;
          } else if (currentElement.getAttribute('class') == classQuery) {
              endFlag = true;
