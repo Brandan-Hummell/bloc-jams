@@ -24,7 +24,7 @@ This version of Bloc Jams requires no setup; all you have to do is pull the file
 
 ## Authors
 
-* **Brandan Hummell** Full Stack Developer & Application Designer- [GitHub](https://github.com/Brandan-Hummell)
+* **Brandan Hummell** Front-End Developer - [GitHub](https://github.com/Brandan-Hummell)
 
 * **Bloc** Checkpoint Coordinator - [GitHub](https://github.com/Bloc/)  
 
